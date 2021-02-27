@@ -14,7 +14,6 @@
 #SBATCH --mail-type=end        # email me when the job finishes
 #SBATCH --mail-user=dlseven777@gmail.com
 
-source /home/dlee31/.bashrc
 module load python/anaconda3/2020.07
-conda activate text-attack
+source activate /home/dlee31/my-text-attack/env
 python -m /home/dlee31/my-text-attack/TextAttack/textattack

@@ -7,18 +7,16 @@ Following are the commands I used to get the environment up and running on `reda
    - `git clone https://github.com/ReDASers/TextAttack.git`
     
 2. Load module to access anaconda.
-   - The default anaconda module (`python/anaconda3/5.0.1`) does not allow for local creation of conda environments. 
-   - I used `module load python/anaconda3/2020.07`.
+   - The default anaconda module (`python/anaconda3/5.0.1`) should be good.
    
-3. In addition, you may need to init your shell to allow for `conda` commands.
-   - `conda init bash`
-   - `source ~/.bashrc`
+3. Move to your project directory.
+   - `cd /home/dlee/my-text-attack/`
     
-4. Create conda environment. I named it `text-attack`
-   - `conda create --name text-attack python=3.6`
+4. Create local conda environment. I named it `text-attack`
+   - `conda create --prefix ~/my-text-attack/env python=3.6`
     
 5. Activate environment
-   - `conda activate text-attack`
+   - `conda activate ~/my-text-attack/env`
     
 6. Install requirements.txt
    - make sure you have the conda environment activated
@@ -77,11 +75,11 @@ This will put your code on a compute node and give access to powerful GPU nodes.
 ```
 - You need load modules
 ```shell
-module load python/anaconda3/2020.07
+module load python/anaconda3/5.0.1
 ```
 - Activate conda environment
 ```shell
-conda activate text-attack
+source activate /home/dlee31/my-text-attack/env
 ```
 - Execute command
 ```shell
@@ -105,8 +103,8 @@ python -m /home/dlee31/my-text-attack/TextAttack/textattack
 #SBATCH --mail-type=end        # email me when the job finishes
 #SBATCH --mail-user=dlseven777@gmail.com
 
-module load python/anaconda3/2020.07
-conda activate text-attack
+module load python/anaconda3/5.0.1
+source activate /home/dlee31/my-text-attack/env
 python -m /home/dlee31/my-text-attack/TextAttack/textattack
 ```
 
