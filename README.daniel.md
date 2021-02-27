@@ -94,7 +94,7 @@ python -m /home/dlee31/my-text-attack/TextAttack/textattack
 #SBATCH -J TAtest              # job name
 
 #output and error file name (%j expands to jobID)
-#SBATCH -o /home/dlee31/my-text-attack/TextAttack/slurm.TAtest.%j.out
+#SBATCH -o /home/dlee31/my-text-attack/TextAttack/out/slurm.TAtest.%j.out
 
 #SBATCH -N 1                   # total number of mpi tasks requested
 #SBATCH --cpus-per-task 2      # allocate two cores
